@@ -4,25 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/index.css">
-  
-  <title>CRUD App </title>
-  <style>
- 
-  </style>
+  <title>Data Collection App</title>
+
 </head>
 <body>
-  <div class="container">
-    <h1>CRUD App </h1>
+  <div class="container" >
+    <h1><span style="color: rgb(80, 199, 1);">Data</span><span style="color: rgb(18, 2, 92);"> Co</span><span style="color: rgb(59, 116, 3);">lle</span><spans style="color: chocolate;">ction </spans><span style="color: rgb(0, 131, 131);">App</span></h1>
     <form id="crud-form">
       <input type="text" id="name" placeholder="Enter name" required>
       <input type="email" id="email" placeholder="Enter email" required>
       <input type="text" id="city" placeholder="Enter city">
-      <button type="submit" class="btn-add">Add</button>
+      <button type="submit">Add</button>
     </form>
 
     <table>
       <thead>
-        <tr>
+        <tr style="color: white;">
           <th>Name</th>
           <th>Email</th>
           <th>City</th>
@@ -35,7 +32,7 @@
 
   <script>
     const form = document.getElementById("crud-form");
-    const nameInput = document.getElementById("   name");
+    const nameInput = document.getElementById("name");
     const emailInput = document.getElementById("email");
     const cityInput = document.getElementById("city");
     const tableBody = document.getElementById("table-body");
@@ -52,8 +49,8 @@
             <td>${item.email}</td>
             <td>${item.city}</td>
             <td>
-              <button class="btn-edit" onclick="editData(${index})">Edit</button>
-              <button class="btn-delete" onclick="deleteData(${index})">Delete</button>
+              <button onclick="editData(${index})">Edit</button>
+              <button onclick="deleteData(${index})">Delete</button>
             </td>
           </tr>
         `;
@@ -65,7 +62,7 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       const name = nameInput.value.trim();
-      const email = emailInput.value.trim(); 
+      const email = emailInput.value.trim();
       const city = cityInput.value.trim();
 
       if (editIndex !== null) {
